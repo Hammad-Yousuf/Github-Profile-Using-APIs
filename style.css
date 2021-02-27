@@ -1,0 +1,183 @@
+
+/* Basic Styling */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('./bg.jpg');
+    
+    color: #fff;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Main Container */
+
+#container{
+    
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(0.5rem);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #9b9b9b;
+    padding: 5vh;
+    border-radius: 10px;
+}
+
+/* Avatar Container */
+
+.avatarContainer{
+    text-align: center;
+}
+#avatar{
+    margin: 0 auto;
+    width: 30%;
+    cursor: pointer;
+}
+
+
+/* Name Container */
+
+.nameContainer{
+    width: 49vh;
+    text-align: center;
+    /* border: 1px solid white; */
+    margin: 20px auto;
+    cursor: pointer;
+}
+#login{
+    text-align: left;
+    font-weight: 200;
+    color: #9b9b9b;
+}
+
+/* Edit Button */
+
+.buttonContainer{
+    width: 100%;
+    text-align: center;
+}
+
+#editProfile-btn{
+    width: 80%;
+    margin: 0 auto;
+    height: 5vh;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: transparent;
+    color: #fff;
+    transition: 
+        background-color 250s ease-in-out
+        ;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+#editProfile-btn::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    height: 5vh;
+    width: 100%;
+    background:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)),transparent;
+    transform: scaleX(1);
+    transform: scaley(0);
+    transform-origin: bottom;
+    transition: transform 250ms ease-in;
+}
+#editProfile-btn:hover::after{
+    transform: scaley(1);
+    transform-origin: top;
+}
+
+
+/* Followers/Following Section */
+
+.followContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+.followContainer>div{
+    display: flex;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.followContainer>div>p#followers{
+    padding: 0 10px;
+}
+
+.follow-text, .followContainer>div>i{
+    margin: 0 5px;
+    color: #9b9b9b;
+}
+.followContainer>div> i{
+    cursor: pointer;
+}
+.followContainer>div>i:hover{
+    color: #fff;
+}
+
+.star>i{
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+/* WebAdress and Location Container */
+
+.link-location{
+    width: 80%;
+    margin: 10vh auto 0 auto;
+    text-overflow: ellipsis;
+}
+.link-location>div{
+    margin: 15px 0;
+    color: #9b9b9b;
+    cursor: pointer;
+}
+.link-location>div>i{
+    transition: color 100ms ease-in-out;
+    margin-right: 20px;
+}
+.link-location>div> i:hover{
+    color: #fff !important;
+}
+.link, .location{
+    display: flex;
+    width: 100%;
+}
+#link:hover, #location:hover{
+    color: #0076e4;
+}
+#link, #location{
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#link::after, #location::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #0076e4;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform 180ms ease-in;
+}
+#link:hover::after, #location:hover:after{
+    transform: scale(1);
+    transform-origin: left;
+}
