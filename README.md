@@ -1,1 +1,1 @@
-# Github-Profile-Using-APIs
+# Getting-Github-Profile-Using-APIs
