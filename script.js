@@ -1,27 +1,27 @@
 
 // URL of GitHub's Users Data Api
 
-var url = 'https://api.github.com/users/hammad-yousuf';
+var url = fetch('https://api.github.com/users/hammad-yousuf').then(Response => Response.json())
 
 // Fetching Avatar
 
-fetch(url).then(Response => Response.json()).then(img =>  image = document.getElementById('avatar').src = img.avatar_url);
+url.then(img =>  image = document.getElementById('avatar').src = img.avatar_url);
 
 // Fetching User's Name
 
-fetch(url).then(Response => Response.json()).then(user => userName = document.getElementById('name').innerHTML = user.name)
+url.then(user => userName = document.getElementById('name').innerHTML = user.name)
 
 // Fetching Login Name
 
-fetch(url).then(Response => Response.json()).then(login => userLogin = document.getElementById('login').innerHTML = login.login)
+url.then(login => userLogin = document.getElementById('login').innerHTML = login.login)
 
 // Fetching number of Followers
 
-fetch(url).then(Response => Response.json()).then(followers => follwersNumber = document.getElementById('followers').innerHTML = followers.followers)
+url.then(followers => follwersNumber = document.getElementById('followers').innerHTML = followers.followers)
 
 // Fetching number of Following
 
-fetch(url).then(Response => Response.json()).then(following => follwingNumber = document.getElementById('following').innerHTML = following.following)
+url.then(following => follwingNumber = document.getElementById('following').innerHTML = following.following)
 
 // Increasing Stars on Click
 var star = 0;
@@ -33,8 +33,10 @@ var star = 0;
 
 // Fetching Location
 
-fetch(url).then(Response => Response.json()).then(location => userLocation = document.getElementById('location').innerHTML = location.location)
+url.then(location => userLocation = document.getElementById('location').innerHTML = location.location)
 
 // Fetching WebAdress
 
-fetch(url).then(Response => Response.json()).then(web => webaddress = document.getElementById('link').innerHTML = web.blog)
+url.then(linkAddress => document.getElementById('link-address').href = linkAddress.blog)
+
+url.then(web => webaddress = document.getElementById('link').innerHTML = web.blog)
