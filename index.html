@@ -10,8 +10,13 @@
     <title>GitHub - Hammad-Yousuf(M.Hammad Yousuf)</title>
 </head>
 <body>
+    <div class="input-container" id="inputContainer">
+        <input type="text" class="input" id="user" autocomplete="off" placeholder="  ">
+        <label class="label">User Name</label>
+        <button id="btn" onclick="getUserProfile()">Get</button>
+    </div>
 
-    <div id="container">
+    <div id="container" class="main-container">
         <div class="profile-container">
             <div class="avatarContainer">
                 <img id="avatar" alt="User">
@@ -47,12 +52,12 @@
                 </div>
                 <div class="link">
                     <i class="fas fa-link"></i>
-                    <p id="link"></p>
+                    <a id="link-address" href=""><p id="link"></p></a>
                 </div>
             </div>
         </div>
     </div>
-
+    <button id="reset" onclick="reset()">Reset</button>
 
 
     <script src="./script.js"></script>

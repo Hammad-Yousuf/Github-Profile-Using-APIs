@@ -1,42 +1,71 @@
 
-// URL of GitHub's Users Data Api
+// Getting User Profile
 
-var url = fetch('https://api.github.com/users/hammad-yousuf').then(Response => Response.json())
+function getUserProfile() {
+    // Disable visibility of button
+    document.getElementById('inputContainer').style.visibility = 'hidden';
+    
+    // Enable Visibility of Reset Button
+    document.getElementById('reset').style.display = 'block'
 
-// Fetching Avatar
+    // Enable visibility of Main Container
+    document.getElementById('container').style.display = 'block';
+    // Getting Input
+    var userInput = document.getElementById('user').value;
 
-url.then(img =>  image = document.getElementById('avatar').src = img.avatar_url);
+    // URL of GitHub's Users Data Api
 
-// Fetching User's Name
+    var getUrl = 'https://api.github.com/users/' + userInput;
+    var url = fetch(getUrl).then(Response => Response.json())
 
-url.then(user => userName = document.getElementById('name').innerHTML = user.name)
+    // Fetching Avatar
 
-// Fetching Login Name
+    url.then(img => image = document.getElementById('avatar').src = img.avatar_url);
 
-url.then(login => userLogin = document.getElementById('login').innerHTML = login.login)
+    // Fetching User's Name
 
-// Fetching number of Followers
+    url.then(user => userName = document.getElementById('name').innerHTML = user.name)
 
-url.then(followers => follwersNumber = document.getElementById('followers').innerHTML = followers.followers)
+    // Fetching Login Name
 
-// Fetching number of Following
+    url.then(login => userLogin = document.getElementById('login').innerHTML = login.login)
 
-url.then(following => follwingNumber = document.getElementById('following').innerHTML = following.following)
+    // Fetching number of Followers
 
-// Increasing Stars on Click
-var star = 0;
+    url.then(followers => follwersNumber = document.getElementById('followers').innerHTML = followers.followers)
 
-    document.getElementById('staricon').addEventListener('click', ()=>{
+    // Fetching number of Following
+
+    url.then(following => follwingNumber = document.getElementById('following').innerHTML = following.following)
+
+    // Increasing Stars on Click
+    var star = 0;
+
+    document.getElementById('staricon').addEventListener('click', () => {
         star++;
         document.getElementById('star').innerHTML = star;
     })
 
-// Fetching Location
+    // Fetching Location
 
-url.then(location => userLocation = document.getElementById('location').innerHTML = location.location)
+    url.then(location => userLocation = document.getElementById('location').innerHTML = location.location)
 
-// Fetching WebAdress
+    // Fetching WebAdress
 
-url.then(linkAddress => document.getElementById('link-address').href = linkAddress.blog)
+    url.then(linkAddress => document.getElementById('link-address').href = linkAddress.blog)
 
-url.then(web => webaddress = document.getElementById('link').innerHTML = web.blog)
+    url.then(web => webaddress = document.getElementById('link').innerHTML = web.blog)
+}
+
+// Reset Function
+
+function reset(){
+     // Enable visibility of button
+     document.getElementById('inputContainer').style.visibility = 'visible';
+    
+     // Disable Visibility of Reset Button
+     document.getElementById('reset').style.display = 'none'
+ 
+     // Disable visibility of Main Container
+     document.getElementById('container').style.display = 'none';
+}
