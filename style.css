@@ -50,7 +50,7 @@ body{
     position: absolute;
     right: 15%;
     top: 20%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: none !important;
     transition: 250ms display ease-in-out;
     cursor: pointer;
