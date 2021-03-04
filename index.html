@@ -10,13 +10,18 @@
     <title>GitHub - Hammad-Yousuf(M.Hammad Yousuf)</title>
 </head>
 <body>
+    <div id="loader">
+        <img src="./Blocks-1s-200px.gif" class="loader-img">
+    </div>
     <div class="input-container" id="inputContainer">
         <input type="text" class="input" id="user" autocomplete="off" placeholder="  ">
+        <i class="fas fa-backspace icon"></i></input>
         <label class="label">User Name</label>
         <button id="btn" onclick="getUserProfile()">Get</button>
     </div>
 
     <div id="container" class="main-container">
+        
         <div class="profile-container">
             <div class="avatarContainer">
                 <img id="avatar" alt="User">
@@ -59,7 +64,8 @@
     </div>
     <button id="reset" onclick="reset()">Reset</button>
 
-
+    <script src="./jquerry.3.5.1.js"></script>
+    <script src="./loader.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

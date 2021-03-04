@@ -1,7 +1,15 @@
+// Delete icon
+document.querySelector('.icon').addEventListener('click', ()=>{
+    document.getElementById('user').value = "";
+})
 
-// Getting User Profile
 
+
+// Creating User Profile
 function getUserProfile() {
+     // Getting Input
+     var userInput = document.getElementById('user').value;
+    
     // Disable visibility of button
     document.getElementById('inputContainer').style.visibility = 'hidden';
     
@@ -10,8 +18,6 @@ function getUserProfile() {
 
     // Enable visibility of Main Container
     document.getElementById('container').style.display = 'block';
-    // Getting Input
-    var userInput = document.getElementById('user').value;
 
     // URL of GitHub's Users Data Api
 
@@ -62,10 +68,10 @@ function getUserProfile() {
 function reset(){
      // Enable visibility of button
      document.getElementById('inputContainer').style.visibility = 'visible';
-    
      // Disable Visibility of Reset Button
      document.getElementById('reset').style.display = 'none'
  
      // Disable visibility of Main Container
      document.getElementById('container').style.display = 'none';
+
 }
